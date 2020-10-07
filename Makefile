@@ -15,3 +15,6 @@ $(name): $(obj)
 	
 run:
 	./$(name)
+
+clean:
+	rm -f $(name)
