@@ -8,7 +8,6 @@
 
 #include "decremental_connectivity.h"
 
-using std::log10;
 using std::cout;
 using std::endl;
 
@@ -22,7 +21,7 @@ int main() {
 
     // init graph
     int n = 100;
-    int m = 2 * n * int(log10(n));
+    int m = 2 * n * int(std::log10(n));
     int times = int(0.75 * m);
     graph G;
     random_simple_undirected_graph(G, n, m);
@@ -46,7 +45,7 @@ int main() {
     std::chrono::duration<double> diff;
     std::chrono::high_resolution_clock::time_point start;
     std::chrono::high_resolution_clock::time_point finish;
-    int i=0;
+    int i = 0;
     while(i < times){
         e = G.choose_edge();
         // make sure to skip chosen edge if it is an artificial one
@@ -80,7 +79,6 @@ int main() {
 
     cout<<"Number of edge deletions: "<<times<<endl;
     cout<<"Dynamic algorithm mean time: "<<std::chrono::duration<double,std::milli>(mean_dynamic).count()<<"ms"<<endl;
-    cout<<"Dynamic algorithm mean time: "<<std::chrono::duration<double,std::micro>(mean_dynamic).count()<<"μs"<<endl;
     cout<<"Static algorithm mean time: "<<std::chrono::duration<double,std::milli>(mean_static).count()<<"ms"<<endl;
 
     return 0;

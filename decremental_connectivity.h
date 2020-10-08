@@ -41,10 +41,10 @@ int init_BFS_struct(graph &, node_array<node_info> &, node, list<edge> &);
 void process_B_case_1(const graph &, node_array<node_info> &, node, node, edge);
 bool process_B_case_2_check(const graph &, node_array<node_info> &, node, node, edge);
 bool process_B_case_2_2_step(const graph &, node_array<node_info> &, queue<node> &, 
-    stack<BFS_change> &, stack<node> &);
+        stack<BFS_change> &, stack<node> &);
 void reverse_BFS_changes(node_array<node_info> &, stack<BFS_change> &, stack<node> &);
 void update_components(graph &, node_array<node_info> &, list<edge> &, edge, int);
 tuple<bool, bool, node> process_A_step(const graph &, node_array<node_info> &, node, node, 
-    stack<node> &, stack<node> &, list<node> &, list<node> &);
+        stack<node> &, stack<node> &, list<node> &, list<node> &);
 bool dynamic_query(const node_array<node_info> &, node, node);
 bool static_query(const graph &, node, node);

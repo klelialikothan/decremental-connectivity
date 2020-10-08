@@ -18,8 +18,9 @@ bool dynamic_query(const node_array<node_info> &node_props, node a, node b){
 
 bool static_query(const graph &G, node a, node b){
 
-    node_array<bool> reached(G,false);
+    node_array<bool> reached(G, false);
     list<node> component = DFS(G, a, reached);
+
     return reached[b];
 
 }

@@ -220,7 +220,7 @@ bool process_B_case_2_2_step(const graph &G, node_array<node_info> &node_props, 
         return true;
     }
     else {
-        // done, halt
+        // process done, halt
         return false;
     }
 
